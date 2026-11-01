@@ -182,9 +182,9 @@ export default function App() {
           <div className="hero-copy">
             <p className="kicker">A FUTURE-SELF SIMULATOR</p>
             <h1>
-              See how you might
+              <span className="hero-how">how</span><span className="hero-me">-me</span>
               <br />
-              <em>look over time.</em>
+              <span className="hero-qualifier">shows you</span> <em>how you might look over time.</em>
             </h1>
             <p className="hero-text">
               Explore three possible future versions of you, then choose the
@@ -199,7 +199,7 @@ export default function App() {
               className="gradient-button"
               onClick={() => setScreen("onboard")}
             >
-              Start your journey <b>→</b>
+              Start how-me <b>→</b>
             </button>
             <p className="disclaimer">
               Hypothetical visual explorations. Not health or appearance
@@ -219,6 +219,7 @@ export default function App() {
             </span>
           </div>
         </section>
+        <PetDock image={petResult.image} onOpen={() => setScreen("pet")} />
       </main>
     );
   if (screen === "onboard")
@@ -362,6 +363,7 @@ export default function App() {
             {step < 1 ? "Continue" : "Reveal my futures"} <b>→</b>
           </button>
         </section>
+        <PetDock image={petResult.image} onOpen={() => setScreen("pet")} />
       </main>
     );
   if (screen === "pet")
